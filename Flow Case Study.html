@@ -27,6 +27,16 @@
     --red-ink: #A6483C;
     --mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace;
     --maxw: 960px;
+    /* Neutral scale aliases used by revision-04 sections */
+    --n0:   #FFFFFF;
+    --n150: #E0E0E0;
+    --n400: #8E8E8E;
+    --n500: #6B6B6B;
+    --n600: #6B6B6B;
+    --n900: #1A1A1A;
+    /* Iris tint scale aliases */
+    --iris-50:  #F0EFFE;
+    --iris-200: #DEDBFB;
   }
 
   * { box-sizing: border-box; }
@@ -664,7 +674,7 @@
 
 <div class="topbar">
   <div class="wrap">
-    <div class="brand"><img class="mark" src="images/flow-logo.png" alt="Flow logo" />Flow</div>
+    <div class="brand"><img class="mark" src="images/flow-logo.png" alt="Flow logo" /><div>Flow<span style="font-size: 10px; color: var(--faint); font-style: italic; display: block; margin-top: 1px; font-weight: 400; letter-spacing: 0;">Independent design concept. Not affiliated with Microsoft Power Automate.</span></div></div>
     <div class="meta">Windows 11 · AI Workspace Intelligence · Concept</div>
   </div>
 </div>
@@ -704,7 +714,7 @@
   <div class="wrap">
     <div class="eyebrow reveal"><span class="num">01</span><span class="bar"></span>Why this, why now</div>
     <h2 class="title reveal">Microsoft didn't have a model problem. It had a trust problem.</h2>
-    <p class="body reveal">Copilot had the most aggressive distribution of any software feature in Windows history: a dedicated keyboard key, a pinned Start menu slot, a taskbar button, and a right-click entry in File Explorer. None of it produced adoption. When users had access to alternatives, 8% chose Copilot. The failure wasn't reach. It was that every forced touchpoint arrived before trust was established. Once the first interaction disappointed, every subsequent sighting of the Copilot icon became a negative signal. More placement accelerated the damage. Flow is designed around the opposite sequence: trust first, then presence.</p>
+    <p class="body reveal">Copilot had the most aggressive distribution of any software feature in Windows history: a dedicated keyboard key, a pinned Start menu slot, a taskbar button, and a right-click entry in File Explorer. Distribution at that scale still didn't translate to voluntary adoption. When users had access to alternatives, 8% chose Copilot. The failure wasn't reach. It was that every forced touchpoint arrived before trust was established. Once the first interaction disappointed, every subsequent sighting of the Copilot icon became a negative signal. More placement accelerated the damage. Flow is designed around the opposite sequence: trust first, then presence.</p>
 
     <div class="figure reveal">
       <img src="uploads/infographic-ubiquity.png" alt="Diagram of a Windows screen with the Copilot icon called out in eight places: Notepad, Photos, Snipping Tool, Start menu, taskbar, keyboard key, Edge sidebar, and File Explorer right-click. Caption: 8 forced touchpoints, 3.3% paid conversion." />
@@ -750,7 +760,7 @@
     <div class="highlight reveal">
       <div class="card-label">Important distinction</div>
       <h3 class="card-title">"This isn't an argument that Copilot is a bad product."</h3>
-      <p class="card-body">Enterprise Copilot, when given organisational context, demonstrably helps. The problem is that consumer trust doesn't recover on a product timeline. Microsoft's March 2026 response confirms this. They didn't fix Copilot, they started removing the name from surfaces where it had failed. That's not a product fix. That's a brand burial. The underlying AI capability needed a different surface, one that hadn't already spent its trust budget.</p>
+      <p class="card-body">Enterprise Copilot, when given organisational context, demonstrably helps. The problem is that consumer trust doesn't recover on a product timeline. Microsoft's March 2026 response confirms this. They didn't fix Copilot, they started removing the name from surfaces where it had failed. That points to a trust problem that product improvements alone cannot resolve. The underlying AI capability needed a different surface, one that hadn't already spent its trust budget.</p>
     </div>
 
     <div class="timing reveal">
@@ -769,7 +779,7 @@
 <section data-screen-label="Research foundation">
   <div class="wrap">
     <div class="eyebrow reveal"><span class="num">02</span><span class="bar"></span>Research foundation</div>
-    <h2 class="title reveal">The problem has been documented for 20 years. Nobody built the fix.</h2>
+    <h2 class="title reveal">The problem has been documented for 20 years. The design pattern to address it hasn't been built at OS level.</h2>
 
     <div class="block-label reveal">Gloria Mark · CHI 2005 + CHI 2008 · 24 knowledge workers · 700+ hours observed</div>
 
@@ -803,7 +813,7 @@
 
     <div class="quote-block reveal">
       <p class="q">"Systems should provide fully customizable, individual, project-specific views. Interrupted tasks should be easily recoverable by preserving the state of the task when interrupted and by providing cues for reorienting."</p>
-      <div class="attr">Gloria Mark et al., CHI 2005. Nobody built this at the OS level. Twenty years later.</div>
+      <div class="attr">Gloria Mark et al., CHI 2005. The pattern hasn't been applied at the OS level. Twenty years later.</div>
     </div>
 
     <div class="duo">
@@ -834,8 +844,7 @@
     <div class="decision grey reveal" style="margin-top:28px;">
       <div class="card-label">Primary research</div>
       <h3 class="card-title">"Informal conversations revealed the same pattern"</h3>
-      <p class="card-body">Six to eight conversations with colleagues across design, development, and research roles. Not a formal study, a recurring signal. Every person described the same experience: losing focus at context switches, manually rebuilding workspaces from scratch, feeling like Windows was working against them. The informal signal matched the peer-reviewed data exactly.</p>
-      <p style="font-size:13px;font-style:italic;color:var(--faint);margin:16px 0 0;">Framed as observed pattern, not cited as research data.</p>
+      <p class="card-body">Six to eight conversations with colleagues across design, development, and research roles. Every person described the same experience: losing focus at context switches, manually rebuilding workspaces from scratch, feeling like the OS was working against their workflow rather than with it. The signal was consistent enough to treat as a design input — and it matched the peer-reviewed data exactly. That alignment was the validation.</p>
     </div>
   </div>
 </section>
@@ -988,7 +997,7 @@
         <div class="o-num">02</div>
         <div>
           <h3 class="o-title">Trust can be designed, not just declared</h3>
-          <p class="o-body">Every Copilot trust failure was a design failure before it was a product failure: no preview before action, no visible permission model, no recovery path for bad predictions. Flow's permission model is a design system: onboarding grants explicit access, Privacy &amp; Control makes it visible and reversible, wrong prediction feedback teaches the system in real time.</p>
+          <p class="o-body">The trust gaps in Copilot's rollout trace back to design decisions made before the product shipped: no preview before action, no visible permission model, no recovery path for bad predictions. Flow's permission model is a design system: onboarding grants explicit access, Privacy &amp; Control makes it visible and reversible, wrong prediction feedback teaches the system in real time.</p>
         </div>
       </div>
       <div class="outcome reveal">
@@ -1021,6 +1030,56 @@
       </div>
     </div>
 
+    <div class="animate-in" style="margin: 48px 0;">
+      <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; color: var(--n400); margin-bottom: 12px;">What I would validate next</div>
+      <p style="font-size: 15px; font-weight: 500; color: var(--n900); margin-bottom: 20px;">Flow is a hypothesis, not a proof. These are the questions a real user study would answer.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div style="background: var(--n0); border: 0.5px solid var(--n150); border-radius: 12px; padding: 16px 20px;">
+          <div style="font-size: 12px; font-weight: 500; color: var(--n900); margin-bottom: 6px;">Do users understand the permission boundary?</div>
+          <div style="font-size: 12px; color: var(--n500); line-height: 1.6;">Can users accurately describe what Flow can and cannot see after completing onboarding? Is the Privacy and Control screen legible enough to build real confidence?</div>
+        </div>
+        <div style="background: var(--n0); border: 0.5px solid var(--n150); border-radius: 12px; padding: 16px 20px;">
+          <div style="font-size: 12px; font-weight: 500; color: var(--n900); margin-bottom: 6px;">Does proactive timing feel helpful or intrusive?</div>
+          <div style="font-size: 12px; color: var(--n500); line-height: 1.6;">At what point before a context shift does the prediction card feel useful rather than pressuring? Is 12 minutes the right window, or does it vary by user and task type?</div>
+        </div>
+        <div style="background: var(--n0); border: 0.5px solid var(--n150); border-radius: 12px; padding: 16px 20px;">
+          <div style="font-size: 12px; font-weight: 500; color: var(--n900); margin-bottom: 6px;">Does earned automation increase trust over time?</div>
+          <div style="font-size: 12px; color: var(--n500); line-height: 1.6;">The Auto-Switch feature unlocks after 10 confirmed predictions. Does that incremental model actually build trust, or does it feel like a countdown the user didn't ask for?</div>
+        </div>
+        <div style="background: var(--n0); border: 0.5px solid var(--n150); border-radius: 12px; padding: 16px 20px;">
+          <div style="font-size: 12px; font-weight: 500; color: var(--n900); margin-bottom: 6px;">How does this scale to enterprise policy?</div>
+          <div style="font-size: 12px; color: var(--n500); line-height: 1.6;">Individual permission grants work for consumer. How does the model extend to IT-managed environments where admins set baseline permissions? Does the trust architecture hold?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="animate-in" style="margin: 48px 0;">
+      <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; color: var(--n400); margin-bottom: 12px;">Why this matters to Microsoft</div>
+      <p style="font-size: 15px; font-weight: 500; color: var(--n900); margin-bottom: 20px;">Flow addresses five things Microsoft is actively working on.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+        <div style="background: var(--iris-50); border: 0.5px solid var(--iris-200); border-radius: 12px; padding: 16px 20px;">
+          <div style="font-size: 12px; font-weight: 500; color: var(--iris-700); margin-bottom: 6px;">Trust in Windows AI</div>
+          <div style="font-size: 12px; color: var(--n500); line-height: 1.6;">A permission-first architecture that makes proactive AI feel safe rather than surprising.</div>
+        </div>
+        <div style="background: var(--iris-50); border: 0.5px solid var(--iris-200); border-radius: 12px; padding: 16px 20px;">
+          <div style="font-size: 12px; font-weight: 500; color: var(--iris-700); margin-bottom: 6px;">A less intrusive AI surface</div>
+          <div style="font-size: 12px; color: var(--n500); line-height: 1.6;">One earned touchpoint instead of eight forced ones. Presence that compounds through accuracy, not placement.</div>
+        </div>
+        <div style="background: var(--iris-50); border: 0.5px solid var(--iris-200); border-radius: 12px; padding: 16px 20px;">
+          <div style="font-size: 12px; font-weight: 500; color: var(--iris-700); margin-bottom: 6px;">Permission model for agentic workflows</div>
+          <div style="font-size: 12px; color: var(--n500); line-height: 1.6;">The same scoped-access model that governs Agent Workspaces — designed from the user's perspective first.</div>
+        </div>
+        <div style="background: var(--iris-50); border: 0.5px solid var(--iris-200); border-radius: 12px; padding: 16px 20px;">
+          <div style="font-size: 12px; font-weight: 500; color: var(--iris-700); margin-bottom: 6px;">Local AI that justifies Copilot+ hardware</div>
+          <div style="font-size: 12px; color: var(--n500); line-height: 1.6;">Flow runs on Phi Silica and Windows accessibility APIs. No cloud dependency. The NPU investment becomes visible to the user.</div>
+        </div>
+        <div style="background: var(--iris-50); border: 0.5px solid var(--iris-200); border-radius: 12px; padding: 16px 20px;">
+          <div style="font-size: 12px; font-weight: 500; color: var(--iris-700); margin-bottom: 6px;">Context bridge across the Windows ecosystem</div>
+          <div style="font-size: 12px; color: var(--n500); line-height: 1.6;">Calendar, files, apps, and M365 — unified into one context layer. The intelligence Windows has always had, made visible and actionable.</div>
+        </div>
+      </div>
+    </div>
+
     <div class="closing reveal">
       <p>Microsoft began removing intrusive Copilot branding in April 2026.<br />Flow was designed before this happened.</p>
     </div>
@@ -1035,12 +1094,37 @@
         <p class="l-body">Showing what the AI can see builds trust. Footnotes don't.</p>
       </div>
       <div class="lesson reveal">
-        <h4 class="l-title">"The model was never the problem"</h4>
+        <h4 class="l-title">"The underlying model capability was never the core issue"</h4>
         <p class="l-body">Consumer Copilot fails because it has no context. Flow is the context layer.</p>
       </div>
     </div>
   </div>
 </section>
+
+<div class="wrap">
+  <div class="animate-in" style="border-top: 0.5px solid var(--n150); padding: 48px 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px;">
+    <div>
+      <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; color: var(--n400); margin-bottom: 12px;">About</div>
+      <p style="font-size: 13px; color: var(--n600); line-height: 1.7; margin: 0;">
+        Tanishq Sardar is a designer focused on human-centred AI systems and Windows UX.
+        Flow was built as an independent research and design project to explore what
+        permission-first, context-aware AI could look like at the OS level — before it
+        was announced as a direction.
+      </p>
+    </div>
+    <div>
+      <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; color: var(--n400); margin-bottom: 12px;">Get in touch</div>
+      <p style="font-size: 13px; color: var(--n600); line-height: 1.7; margin: 0 0 16px;">
+        If this work resonates, I would welcome a conversation — whether that is feedback,
+        a question about the design decisions, or an opportunity to explore this further.
+      </p>
+      <div style="display: flex; gap: 12px;">
+        <a href="https://linkedin.com/in/tanishqsardar" target="_blank" style="font-size: 12px; font-weight: 500; color: var(--iris-700); text-decoration: none; border: 0.5px solid var(--iris-200); border-radius: 6px; padding: 8px 14px; background: var(--iris-50);">LinkedIn</a>
+        <a href="mailto:tanishqsardar2002@gmail.com" style="font-size: 12px; font-weight: 500; color: var(--n600); text-decoration: none; border: 0.5px solid var(--n150); border-radius: 6px; padding: 8px 14px; background: var(--n0);">Email</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer>
   <div class="wrap">
