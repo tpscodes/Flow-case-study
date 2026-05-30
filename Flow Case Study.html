@@ -669,6 +669,265 @@
     footer .wrap { flex-direction: column; }
     footer .col.right { text-align: left; }
   }
+
+/* ============================================
+   MOBILE RESPONSIVENESS — max-width 768px
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+    overflow-x: hidden !important;
+  }
+
+  .wrap {
+    padding: 0 20px !important;
+  }
+
+  /* Section titles */
+  h1, h2 {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Hook quote */
+  .hook .quote {
+    font-size: 20px !important;
+  }
+
+  /* Hook section padding */
+  .hook {
+    padding-top: 80px !important;
+  }
+
+  /* Section padding */
+  section {
+    padding: 72px 0 !important;
+  }
+
+  /* ALL multi-column grids → single column */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Prototype link card — stack vertically */
+  .animate-in[style*="display: flex"] {
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: flex-start !important;
+  }
+
+  .animate-in[style*="display: flex"] a {
+    margin-left: 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* About + CTA grid → single column */
+  [style*="grid-template-columns: 1fr 1fr"][style*="gap: 48px"] {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* CTA buttons row */
+  [style*="display: flex"][style*="gap: 12px"] {
+    flex-wrap: wrap !important;
+  }
+
+  [style*="display: flex"][style*="gap: 12px"] a {
+    flex: 1 !important;
+    text-align: center !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Screenshots — full width, capped height */
+  .screen img, .screen-feature img {
+    max-height: 280px !important;
+    object-fit: cover !important;
+    object-position: top !important;
+    width: 100% !important;
+  }
+
+  /* Infographics — full width */
+  .figure img, .illus {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Evidence image grid */
+  .evidence {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ev img {
+    height: 200px !important;
+  }
+
+  /* Shot grid — single col */
+  .shot-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Decision card columns → stack */
+  .decision .d-cols {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Lessons → single col */
+  .lessons {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Stat row → single col */
+  .stat-row, .grid-2x2, .duo {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Compare cards */
+  .compare {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Screen grid → single col */
+  .screen-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Phase grid stays single col (already set) */
+
+  /* Market timing date pills — wrap */
+  .pill-date {
+    white-space: normal !important;
+  }
+
+  /* Timing row — stack */
+  .timing-row {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  /* Card padding reduction */
+  .cmp, .stat, .lesson, .highlight, .decision {
+    padding: 20px 18px !important;
+  }
+
+  /* Section margin reduction */
+  [style*="margin: 48px 0"],
+  [style*="margin: 56px 0"] {
+    margin: 32px 0 !important;
+  }
+
+  /* Closing statement */
+  .closing {
+    padding: 36px 24px !important;
+  }
+
+  .closing p {
+    font-size: 20px !important;
+  }
+
+  /* Footer */
+  footer .wrap {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  footer .col.right {
+    text-align: left !important;
+  }
+
+  /* Topbar overflow guard */
+  .topbar {
+    overflow: hidden !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .topbar .wrap {
+    height: auto !important;
+    min-height: 56px !important;
+    padding: 8px 20px !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+  }
+
+  .topbar .meta {
+    font-size: 11px !important;
+  }
+
+  /* Outcome grid label */
+  .outcome {
+    grid-template-columns: 40px 1fr !important;
+  }
+
+  /* Brand disclaimer */
+  .brand {
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+  }
+
+}
+
+/* ============================================
+   SMALL MOBILE — max-width 480px
+   ============================================ */
+
+@media (max-width: 480px) {
+
+  .wrap {
+    padding: 0 16px !important;
+  }
+
+  .hook .quote {
+    font-size: 18px !important;
+  }
+
+  .hook {
+    padding-top: 64px !important;
+  }
+
+  h2.title {
+    font-size: 22px !important;
+  }
+
+  /* Stat numbers */
+  .stat .num {
+    font-size: 34px !important;
+  }
+
+  /* Screenshots — shorter on small phones */
+  .screen img, .screen-feature img {
+    max-height: 220px !important;
+  }
+
+  /* Reduce card border radius */
+  .cmp, .stat, .lesson, .highlight, .decision, .timing {
+    border-radius: 10px !important;
+  }
+
+  /* Section eyebrow */
+  .eyebrow {
+    font-size: 10px !important;
+  }
+
+  /* Prototype card text */
+  .animate-in[style*="background: var(--ink)"] div[style*="font-size: 15px"] {
+    font-size: 14px !important;
+  }
+
+  /* Closing */
+  .closing p {
+    font-size: 18px !important;
+  }
+
+}
 </style>
 </head>
 <body>
@@ -859,7 +1118,7 @@
       <div>
         <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; color: var(--faint); margin-bottom: 6px;">Live prototype</div>
         <div style="font-size: 15px; font-weight: 500; color: #FFFFFF; margin-bottom: 4px;">Flow — running on Windows 11</div>
-        <div style="font-size: 12px; color: var(--faint); line-height: 1.6;">A working prototype demonstrating the core interaction model. Built with React, Vite, and Microsoft Fluent UI v9 — not production code, but real enough to click through.</div>
+        <div style="font-size: 12px; color: var(--faint); line-height: 1.6;">A working prototype demonstrating the core interaction model. Built with React, Vite, and Microsoft Fluent UI v9. Not production code, but real enough to click through.</div>
       </div>
       <a href="https://flow-proto-nine.vercel.app/" target="_blank" style="flex-shrink: 0; margin-left: 24px; background: var(--iris); color: white; font-size: 13px; font-weight: 500; padding: 10px 20px; border-radius: 8px; text-decoration: none; white-space: nowrap;">Open prototype →</a>
     </div>
