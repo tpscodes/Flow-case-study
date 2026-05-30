@@ -843,7 +843,7 @@
     text-align: left !important;
   }
 
-  /* Topbar overflow guard */
+  /* Topbar — mobile compact layout */
   .topbar {
     overflow: hidden !important;
     max-width: 100% !important;
@@ -852,14 +852,26 @@
 
   .topbar .wrap {
     height: auto !important;
-    min-height: 56px !important;
-    padding: 8px 20px !important;
-    flex-wrap: wrap !important;
-    gap: 4px !important;
+    min-height: 48px !important;
+    padding: 10px 20px !important;
+    align-items: flex-start !important;
+    flex-wrap: nowrap !important;
   }
 
+  /* Hide right-side meta on mobile — redundant at small size */
   .topbar .meta {
-    font-size: 11px !important;
+    display: none !important;
+  }
+
+  /* Brand block sizing */
+  .brand {
+    font-size: 15px !important;
+  }
+
+  /* Disclaimer line under brand */
+  .brand span {
+    font-size: 10px !important;
+    max-width: 240px !important;
   }
 
   /* Outcome grid label */
