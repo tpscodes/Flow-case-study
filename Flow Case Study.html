@@ -570,7 +570,8 @@
   .screen-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; align-items: start; }
   .screen-grid .screen { transition: transform .2s ease, box-shadow .2s ease; }
   .screen-grid .screen:hover { transform: translateY(-2px); box-shadow: 0 16px 40px -26px rgba(20,20,20,0.4); }
-  .phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 30px 0 6px; align-items: start; }
+  .phase-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 30px 0 6px; }
+  .phase-grid .screen img { max-height: 400px; object-fit: cover; }
   .phase .p-step { font-family: var(--mono); font-size: 11.5px; color: var(--iris-700); font-weight: 500; letter-spacing: 0.04em; }
 
   /* ---------- SECTION 5 - outcomes ---------- */
@@ -854,6 +855,15 @@
   <div class="wrap">
     <div class="eyebrow reveal"><span class="num">03</span><span class="bar"></span>Design decisions</div>
     <h2 class="title reveal">Every decision traces back to one of three behavioral failures.</h2>
+    <div class="animate-in" style="background: var(--ink); border-radius: 12px; padding: 24px 28px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px;">
+      <div>
+        <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; color: var(--faint); margin-bottom: 6px;">Live prototype</div>
+        <div style="font-size: 15px; font-weight: 500; color: #FFFFFF; margin-bottom: 4px;">Flow — running on Windows 11</div>
+        <div style="font-size: 12px; color: var(--faint); line-height: 1.6;">A working prototype demonstrating the core interaction model. Built with React, Vite, and Microsoft Fluent UI v9 — not production code, but real enough to click through.</div>
+      </div>
+      <a href="https://flow-proto-nine.vercel.app/" target="_blank" style="flex-shrink: 0; margin-left: 24px; background: var(--iris); color: white; font-size: 13px; font-weight: 500; padding: 10px 20px; border-radius: 8px; text-decoration: none; white-space: nowrap;">Open prototype →</a>
+    </div>
+
     <p class="prototype-note reveal">All screens are from the working prototype running on Windows 11. Built with React, Vite, and Microsoft Fluent UI v9.</p>
 
     <!-- Card 1 -->
@@ -1044,11 +1054,11 @@
         </div>
         <div style="background: var(--n0); border: 0.5px solid var(--n150); border-radius: 12px; padding: 16px 20px;">
           <div style="font-size: 12px; font-weight: 500; color: var(--n900); margin-bottom: 6px;">Does earned automation increase trust over time?</div>
-          <div style="font-size: 12px; color: var(--n500); line-height: 1.6;">The Auto-Switch feature unlocks after 10 confirmed predictions. Does that incremental model actually build trust, or does it feel like a countdown the user didn't ask for?</div>
+          <div style="font-size: 12px; color: var(--n500); line-height: 1.6;">Auto-Switch unlocks after 10 confirmed predictions. Does that incremental model actually build trust, or does it feel like a countdown the user didn't ask for?</div>
         </div>
         <div style="background: var(--n0); border: 0.5px solid var(--n150); border-radius: 12px; padding: 16px 20px;">
           <div style="font-size: 12px; font-weight: 500; color: var(--n900); margin-bottom: 6px;">How does this scale to enterprise policy?</div>
-          <div style="font-size: 12px; color: var(--n500); line-height: 1.6;">Individual permission grants work for consumer. How does the model extend to IT-managed environments where admins set baseline permissions? Does the trust architecture hold?</div>
+          <div style="font-size: 12px; color: var(--n500); line-height: 1.6;">Individual permission grants work for consumer. How does the model extend to IT-managed environments where admins set baseline permissions?</div>
         </div>
       </div>
     </div>
@@ -1074,7 +1084,7 @@
           <div style="font-size: 12px; color: var(--n500); line-height: 1.6;">Flow runs on Phi Silica and Windows accessibility APIs. No cloud dependency. The NPU investment becomes visible to the user.</div>
         </div>
         <div style="background: var(--iris-50); border: 0.5px solid var(--iris-200); border-radius: 12px; padding: 16px 20px;">
-          <div style="font-size: 12px; font-weight: 500; color: var(--iris-700); margin-bottom: 6px;">Context bridge across the Windows ecosystem</div>
+          <div style="font-size: 12px; font-weight: 500; color: var(--iris-700); margin-bottom: 6px;">Context bridge across Windows</div>
           <div style="font-size: 12px; color: var(--n500); line-height: 1.6;">Calendar, files, apps, and M365, unified into one context layer. The intelligence Windows has always had, made visible and actionable.</div>
         </div>
       </div>
@@ -1107,15 +1117,16 @@
       <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; color: var(--n400); margin-bottom: 12px;">About</div>
       <p style="font-size: 13px; color: var(--n600); line-height: 1.7; margin: 0;">
         Tanishq Sardar is a designer focused on human-centred AI systems and Windows UX.
-        Flow was built as an independent research and design project to explore what
-        permission-first, context-aware AI could look like at the OS level, before it
-        was announced as a direction.
+        Flow was built as an independent research and design concept to explore what
+        permission-first, context-aware AI could look like at the OS level. The prototype
+        demonstrates the core interaction model — prediction card, sidebar, onboarding,
+        and privacy controls — built to production visual standards using Microsoft Fluent UI v9.
       </p>
     </div>
     <div>
       <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; color: var(--n400); margin-bottom: 12px;">Get in touch</div>
       <p style="font-size: 13px; color: var(--n600); line-height: 1.7; margin: 0 0 16px;">
-        If this work resonates, I would welcome a conversation: feedback,
+        If this work resonates, I would welcome a conversation — whether that is feedback,
         a question about the design decisions, or an opportunity to explore this further.
       </p>
       <div style="display: flex; gap: 12px;">
